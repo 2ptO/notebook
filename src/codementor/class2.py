@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
-
-This is a temporary script file.
+Notes taken during the class.
 """
 
 import random
