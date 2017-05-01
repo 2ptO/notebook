@@ -8,6 +8,7 @@ int main(void) {
     printf("Enter your string to reverse:");
     scanf("%s", input);
     reverse(input);
+    printf("Reversed string: %s\n", input);
     return 1;
 }
 
@@ -17,12 +18,29 @@ int main(void) {
  */
 int reverse(char *word)
 {
-    //find the end of the string.
     char *start = word;
     char *end = start;
+
+    if (word == NULL) {
+        return -1;
+    }
+
+    //find the end of the string.
     while (*end != '\0') {
         end++;
     }
-    printf ("start = %p, end = %p", start, end);
+
+    //go back one position in the end pointer to skip the NULL character.
+    end--;
+
+    //swap start and beginning
+    while (start < end) {
+        char tmp = *start;
+        *start = *end;
+        *end = tmp;
+        ++start;
+        --end;
+    }
+
     return 1;
 }
