@@ -39,8 +39,8 @@ class Text(object):
 def main():
     """ Main """
     text1 = Text("hellow")
-    print(text1.is_permutation_of("wohello"))
-    print(text1.is_permutation_of("wohell"))
+    print (text1.is_permutation_of("wohello"))
+    print (text1.is_permutation_of("wohell"))
 
 if __name__ == "__main__":
     main()
