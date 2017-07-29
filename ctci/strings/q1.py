@@ -37,16 +37,12 @@ class UniqueCharFinder(): # pylint: disable=too-few-public-methods
         char_bitmap = 0x0
         for ch in self.text: # pylint: disable=invalid-name
             bitpos = (ord(ch) - ord('a'))
-            assert (bitpos >= 0 and bitpos < 25)
-            if char_bitmap & 1<<bitpos > 0:
+            assert bitpos >= 0 and bitpos < 25
+            if (char_bitmap & 1<<bitpos) > 0:
                 return False
             else:
                 char_bitmap = char_bitmap | (1<<bitpos)
         return True
-
-
-
-
 
 def main():
     """ Main function.."""
