@@ -8,8 +8,7 @@ class Text(object):
     def __init__(self, val):
         self.val = val
 
-    def is_permutation_of(self, other_text, use_sorting = False):
-        """ uses sorting method """
+    def is_permutation_of(self, other_text, use_sorting=False): # pylint: disable=missing-docstring
         if len(self.val) != len(other_text):
             return False
 
@@ -35,12 +34,12 @@ class Text(object):
             else:
                 return False
         return True
-    
+
 def main():
     """ Main """
     text1 = Text("hellow")
-    print (text1.is_permutation_of("wohello"))
-    print (text1.is_permutation_of("wohell"))
+    print(text1.is_permutation_of("wohello"))
+    print(text1.is_permutation_of("wohell"))
 
 if __name__ == "__main__":
     main()
