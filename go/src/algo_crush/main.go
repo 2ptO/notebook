@@ -35,10 +35,11 @@ func main() {
 	/*
 	 * find the maximum through prefix sum scan
 	 */
-	var max int64
+	var max, x int64
 	for i := int64(1); i <= N; i++ {
-		if (data[i] + max) > max {
-			max = data[i] + max
+		x = data[i] + x
+		if x > max {
+			max = x
 		}
 	}
 
