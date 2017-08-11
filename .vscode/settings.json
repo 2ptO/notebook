@@ -3,13 +3,12 @@
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",
-        "./ctci/python/",
+        "./ctci/python",
         "-p",
         "test_*.py"
     ],
-    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.unittestEnabled": true,
     "python.linting.enabled": true,
-    "python.unitTest.promptToConfigure": false,
     "python.unitTest.pyTestEnabled": false,
     "python.unitTest.nosetestsEnabled": false
 }
