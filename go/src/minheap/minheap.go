@@ -21,13 +21,14 @@ func (mHeap MinHeap) peek() (int, error) {
 func (mHeap *MinHeap) add(newVal int) {
 	// mHeap.ensureEnoughCapacity()
 	mHeap.data[mHeap.size] = newVal
-	mHeap.bubbleUp(mHeap.size)
+	mHeap.bubbleUp()
 	mHeap.size++
 }
 
-func (mHeap *MinHeap) bubbleUp(index int) {
+func (mHeap *MinHeap) bubbleUp() {
 	// Remember: Recursion with array is dangerous.
 	// change this into while loop instead.
+	index := mHeap.size
 	for mHeap.hasParent(index) &&
 		(mHeap.data[index] < mHeap.data[mHeap.getParentIndex(index)]) {
 		mHeap.swap(index, mHeap.getParentIndex(index))
@@ -60,11 +61,12 @@ func (mHeap *MinHeap) pop() (int, error) {
 	}
 	mHeap.swap(0, (mHeap.size - 1))
 	mHeap.size--
-	mHeap.bubbleDown(0)
+	mHeap.bubbleDown()
 	return root, nil
 }
 
-func (mHeap *MinHeap) bubbleDown(parentIndex int) {
+func (mHeap *MinHeap) bubbleDown() {
+	parentIndex := 0
 	for mHeap.hasLeftChild(parentIndex) {
 		smallerChildIndex := mHeap.getLeftChildIndex(parentIndex)
 		if mHeap.hasRightChild(parentIndex) &&
@@ -75,6 +77,7 @@ func (mHeap *MinHeap) bubbleDown(parentIndex int) {
 			mHeap.swap(parentIndex, smallerChildIndex)
 			parentIndex = smallerChildIndex
 		} else {
+			//root satisfies the heap condition.
 			break
 		}
 	}
