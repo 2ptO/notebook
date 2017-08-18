@@ -3,6 +3,7 @@ package chapter1
 // Given two strings, write a method to find whether one string
 // is a permutation of the other.
 
+// ArePermutations implementation
 func ArePermutations(str1, str2 string) bool {
 	if len(str1) != len(str2) {
 		return false

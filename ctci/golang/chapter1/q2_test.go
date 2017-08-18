@@ -18,9 +18,11 @@ func TestArePermutations(t *testing.T) {
 
 	for _, tCase := range testCases {
 		actual := ArePermutations(tCase.str1, tCase.str2)
+		t.Logf("Testing permuations. %v %v\n", tCase.str1, tCase.str2)
 		if actual != tCase.expected {
 			t.Fatalf("Permutations computation failed for %s and %s, expected %t, actual %t\n",
 				tCase.str1, tCase.str2, tCase.expected, actual)
+
 		}
 	}
 

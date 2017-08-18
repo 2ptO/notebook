@@ -3,7 +3,11 @@
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",
+<<<<<<< HEAD
         "./ctci/python/strings/",
+=======
+        "./ctci/python",
+>>>>>>> 2048f466ec717a3fb84e27f32a5027a30f100a99
         "-p",
         "test_*.py"
     ],
