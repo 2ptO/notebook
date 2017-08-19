@@ -14,6 +14,7 @@ type bio struct {
 	Age  int
 }
 
+//Batsman ..exported for JSON usage
 type Batsman struct {
 	bio
 	Runs int
@@ -27,6 +28,7 @@ func (b *Batsman) addRuns(runs int) {
 	b.Runs += runs
 }
 
+//Bowler2 ...exported for JSON usage.
 type Bowler2 struct {
 	bio
 	Wickets int
@@ -36,6 +38,7 @@ func (b Bowler2) score() int {
 	return b.Wickets
 }
 
+//Player ..exported for JSON usage
 type Player interface {
 	score() int
 }
