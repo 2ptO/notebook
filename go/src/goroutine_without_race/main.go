@@ -19,11 +19,6 @@ func main() {
 
 	wg.Add(numRoutines)
 	for id := 0; id < numRoutines; id++ {
-		go incrementWithRace(id)
-	}
-
-	wg.Add(numRoutines)
-	for id := 0; id < numRoutines; id++ {
 		go incrementWithoutRace(id)
 	}
 
@@ -31,12 +26,7 @@ func main() {
 	fmt.Println("Counter:", counter)
 }
 
-func incrementWithRace(id int) {
-	counter++
-	fmt.Printf("In routine%d counter = %d\n", id, counter)
-	wg.Done()
-}
-
+// Uses mutex locks to prevent concurrent access to the counter.
 func incrementWithoutRace(id int) {
 	mu.Lock()
 	counter++

@@ -3,7 +3,7 @@
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",
-        "./ctci/python",
+        ".",
         "-p",
         "test_*.py"
     ],
