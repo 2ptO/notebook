@@ -4,10 +4,14 @@
         "-v",
         "-s",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "./ctci/python/strings/",
 =======
         "./ctci/python",
 >>>>>>> 2048f466ec717a3fb84e27f32a5027a30f100a99
+=======
+        ".",
+>>>>>>> dd5923154f1aacaa1ec329b0b66779445419a2f7
         "-p",
         "test_*.py"
     ],
